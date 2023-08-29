@@ -1,0 +1,793 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 2 version
+*/
+
+/*
+
+Main colors used
+--text-color: #2b2b2b
+--primary-color: #8cabbf
+--secondary-color: #DF6615
+--background-color: #CDDDDD
+
+
+header: #8cabbf
+header color bar: #DF6615
+footer: #8cabbf
+
+
+main navigation - list items
+--main-nav-text-color: #FFF;
+--main-nav-normal-color: #456173
+--main-nav-hover-color: #244a64
+--main-nav-current-page-color: #BF5712
+--main-nav-active-color: #223c4f
+
+
+button colors
+--btn-text-color: #FFF
+--btn-background-color: #456173
+
+images
+--img-border-color: #456173
+
+box-shadow
+box-shadow: 5px 5px 15px #888;
+--box-shadow-color: #888
+
+
+link colors
+unvisited: #6D0075
+--link-unvisited-color: #6D0075
+
+visited: #2b2b2b
+--link-visited-color: #2b2b2b 
+
+active: #790202
+--link-active-color: #790202 
+
+*/
+
+
+
+
+/* root element of the document. Variables defined here have a global scope. */
+:root {
+
+    /* Colors */
+    /* Main colors used */
+
+    /* main navigation - list item colors */
+
+    /* buttons - styling */
+
+    /* links - colors */
+
+
+    /* images */
+    /* images - colors */
+
+    /* images - box-shadow */
+
+
+    /* Text */
+    /* main font used */
+
+    /* h1 */
+
+
+    /* input-boxes -styling */
+
+
+    /* Animations */
+    /* colors */
+    /* animation - about page - svg sun */
+
+}
+
+
+
+
+/* sets the box-sizing property to border-box for all HTML elements, causing their width and height to include padding and border within the defined dimensions. */
+* {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+
+body {
+    background-color: #CDDDDD;
+    font-family: 'Roboto', Arial;
+}
+
+/* The outer container takes the full height of the viewport */
+.page-container {
+    min-height: 100vh;
+    position: relative;
+}
+
+/* This prevents the content from flowing under the footer */
+.content-wrapper {
+    /* Must be equal to the height of the footer */
+    padding-bottom: 120px;
+}
+
+
+
+h1 {
+    color: #2b2b2b;
+    font-size: 34px;
+    line-height: 1.5;
+    font-weight: 900;
+    margin-bottom: 12px;
+}
+
+.h1-heading-work {
+    text-align: center;
+}
+
+
+p {
+    color: #2b2b2b;
+    font-size: 16px;
+    line-height: 1.2;
+}
+
+
+
+a {
+    color: #6D0075;
+}
+
+a:visited {
+    /* visited link */
+    color: #2b2b2b;
+}
+
+a:hover,
+a:focus {
+    /* No underlining when hovering over a link */
+    text-decoration: none;
+}
+
+a:active {
+    /* selected link */
+    color: #790202;
+}
+
+
+.about-main-section__btn--download {
+    /* overwrites browser defaults and resets the border */
+    border: none;
+    /* takes the font from the outer container */
+    font-family: inherit;
+    font-weight: 700;
+    /* styles the background color, font color, and text decoration (underline, etc.) of the button */
+    background-color: #456173;
+    color: #FFF;
+    text-decoration: none;
+    /*adds spacing to the button (this will be discussed more in-depth later) */
+    padding: 10px;
+    border-radius: 3px;
+    /* gives the button a bottom border with a width of 2px, a type of solid, and a color in RGBA format */
+    border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+
+    -webkit-transition: opacity 0.7s;
+
+    transition: opacity 0.7s;
+
+}
+
+
+.contact-main-section__btn--submit {
+    /* overwrites browser defaults and resets the border */
+    border: none;
+    /* takes the font from the outer container */
+    font-family: inherit;
+    font-weight: 700;
+    /* styles the background color, font color, and text decoration (underline, etc.) of the button */
+    background-color: #456173;
+    color: #FFF;
+    text-decoration: none;
+    /*adds spacing to the button (this will be discussed more in-depth later) */
+    padding: 10px;
+    border-radius: 3px;
+    /* gives the button a bottom border with a width of 2px, a type of solid, and a color in RGBA format */
+    border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+
+    -webkit-transition: opacity 0.7s;
+
+    transition: opacity 0.7s;
+
+}
+
+
+.about-main-section__btn--download:hover,
+.about-main-section__btn--download:focus,
+.contact-main-section__btn--submit:hover,
+.contact-main-section__btn--submit:focus {
+    /* lets the mouse appear as a hand when hovering over the button */
+    cursor: pointer;
+    /* reduces the opacity of the button to 80% */
+    opacity: 0.8;
+}
+
+.contact-main-section {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.contact-main-section p {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 0 20px;
+    font-weight: 700;
+}
+
+.about-main-section {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.about-main-section .about-main-section__text p {
+    padding: 0 20px;
+}
+
+
+.about-main-section__table {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.about-main-section__btn--download {
+    display: inline-block;
+    margin: 40px 0 100px 0;
+    text-decoration: none;
+    min-width: 170px;
+}
+
+.contact-main-section__btn--submit {
+    display: inline-block;
+    margin: 15px 0 100px 0;
+    text-decoration: none;
+    min-width: 170px;
+}
+
+
+
+.contact-main-section__form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.contact-main-section__form-input {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    gap: 10px;
+    /* margin between input boxes. Use this instead of margin-bottom of label-tag */
+    margin-bottom: 15px;
+}
+
+
+label {
+    /* min-width important for uniform appearance */
+    min-width: 160px;
+    font-weight: 700;
+    text-align: left;
+    /* margin-bottom: 10px; */
+}
+
+input[type="text"] {
+    /* using the full width of the container */
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #aeaeae;
+    border-radius: 5px;
+}
+
+input[type="email"] {
+    /* using the full width of the container */
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #aeaeae;
+    border-radius: 5px;
+}
+
+input[type="tel"] {
+    /* using the full width of the container */
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #aeaeae;
+    border-radius: 5px;
+}
+
+textarea {
+    /* using the full width of the container */
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #aeaeae;
+    border-radius: 5px;
+}
+
+
+
+
+
+
+
+
+
+/* Main Nav styling */
+.navigation-list__item--active {
+    /*  removes the underlining on the active element */
+    text-decoration: none;
+}
+
+.navigation-list__item {
+    font-weight: 700;
+    opacity: 1.0;
+}
+
+
+/* Centers profile "box" on the page */
+.profile {
+    max-width: 250px;
+    margin: 50px auto;
+    text-align: center;
+}
+
+
+.profile__portrait {
+    /* float: left; */
+    width: 250px;
+    /* margin-bottom: 30px; */
+    border: 7px solid #456173;
+    border-radius: 15px;
+    /* offset-x | offset-y | blur-radius | color */
+    -webkit-box-shadow: 5px 5px 15px #888;
+    box-shadow: 5px 5px 15px #888;
+}
+
+.page-header {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+    /* padding added to all sides of the header-container */
+    padding: 20px;
+    background-color: #8cabbf;
+}
+
+.page-header-icon {
+    display: block;
+    width: 80px;
+    height: auto;
+    margin-left: 20px;
+    fill: #2b2b2b;
+}
+
+.header-color-bar {
+    height: 13px;
+    width: 100%;
+    background-color: #DF6615;
+}
+
+/* child items of the header have a base width of 200px and can shrink. No growing allowed */
+.page-header__item {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 1 200px;
+    flex: 0 1 200px;
+    width: 200px;
+    /* responsive image */
+    max-width: 100%;
+    height: auto;
+}
+
+
+/* Pseudo-Selector :last-child to select the navigation. Navigation gets right-aligned. flex-grow property is overwritten but flex-basis and flex-shrink stay the same.*/
+.page-header__item:last-child {
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    text-align: right;
+}
+
+/* remove dots from unordered list */
+.navigation-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+/* aligns li elements of the navigation in a row */
+.navigation-list li {
+    display: inline-block;
+    /* margin-right: 0px; */
+    min-width: 90px;
+    line-height: 45px;
+    /* background-color: rgb(0, 0, 0); */
+    text-align: center;
+    /* using border-radius instead of percentage to avoid distortion when element is scaled up */
+    border-radius: 5px;
+    margin: 5px 3px;
+}
+
+/* selecting only the a-tags in the main nav menu to reset their states and colors */
+.navigation-list li a {
+    /* makes the whole li element a clickable Link */
+    display: block;
+    /* overwrites the a-tag properties for the nav menu */
+    text-decoration: none;
+    color: #FFF;
+}
+
+/* overwrites the a-tag pseudo-classes for the nav menu */
+.navigation-list li a:hover {
+    color: #FFF;
+}
+
+.navigation-list li a:active {
+    color: #FFF;
+}
+
+.navigation-list li a:visited {
+    color: #FFF;
+}
+
+
+
+
+/* styling the main navigation li elements */
+/* normal look of menu element */
+.navigation-list li.nav-list__li-element {
+    background-color: #456173;
+    /* transition: opacity 0.7s; */
+}
+
+/* look of the current page that is opened */
+.navigation-list li.nav-list__li-element--active {
+    background-color: #BF5712;
+}
+
+
+/* hover, focus */
+.navigation-list li.nav-list__li-element:hover {
+    background-color: #244a64;
+    /* lets the mouse appear as a hand when hovering over the button */
+    cursor: pointer;
+    /* opacity: 0.8; */
+}
+
+.navigation-list li.nav-list__li-element:focus {
+    background-color: #244a64;
+    /* lets the mouse appear as a hand when hovering over the button */
+    cursor: pointer;
+    /* opacity: 0.8; */
+}
+
+/* active */
+.navigation-list li.nav-list__li-element:active {
+    background-color: #223c4f;
+}
+
+
+
+
+
+
+
+
+
+/* The footer will be positioned at the bottom inside the page-container */
+.page-footer {
+    /* clear: both; to clear the float */
+    clear: both;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    text-align: center;
+    background-color: #8cabbf;
+
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 120px;
+}
+
+
+
+
+
+/* grid layout */
+
+/* start grid fallback */
+.grid__item {
+    display: inline-block;
+    width: 33%;
+}
+
+/* end grid fallback */
+
+
+/* grid container */
+/* @supports ensures that browser supports the display: grid feature. Otherwise fallback solution */
+@supports (display: grid) {
+    .grid {
+        display: -ms-grid;
+        display: grid;
+        -ms-grid-columns: 1fr 20px 1fr 20px 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 20px;
+        padding: 50px;
+        margin: 0;
+    }
+
+
+    /* grid item */
+    .grid__item {
+        background-color: #8cabbf;
+        width: auto;
+        min-height: auto;
+        -webkit-box-pack: left;
+        -ms-flex-pack: left;
+        justify-content: left;
+        text-align: left;
+        padding-left: 20px;
+        margin: 0;
+        /* border: 5px solid #4682b4; */
+    }
+
+    /* grid item - styling heading, text and a-tag */
+    .grid__item h1,
+    p {
+        margin-top: 10px;
+        margin-bottom: 5px;
+    }
+
+    .grid__item a {
+        display: block;
+        margin-top: 10px;
+        margin-bottom: 20px;
+    }
+
+    /* changing the grid layout - merge multiple grid cells */
+    .grid__item:nth-child(1) {
+        -ms-grid-column: 1;
+        grid-column: 1; /* info stackoverflow: "When using a vendor-specific prefix, also include the standard property." */
+        grid-column-start: 1;
+        -ms-grid-column-span: 0;
+        grid-column-end: 1;
+        -ms-grid-row: 1;
+        grid-row: 1; /* info stackoverflow: "When using a vendor-specific prefix, also include the standard property." */
+        grid-row-start: 1;
+        -ms-grid-row-span: 2;
+        grid-row-end: 3;
+    }
+
+    .grid__item:nth-child(5) {
+        /* using the short notation */
+        grid-column-start: 3 / 3;
+        grid-row-start: span 2;
+
+    }
+
+    .grid__item:nth-child(8) {
+        /* using the short notation */
+        grid-column-start: span 2;
+        -ms-grid-row: 4;
+        grid-row: 1; /* info stackoverflow: "When using a vendor-specific prefix, also include the standard property." */
+        grid-row-start: 4;
+    }
+}
+
+
+
+/* media queries*/
+@media all and (max-width: 500px) {
+    .grid {
+        -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    }
+}
+
+
+@media all and (min-width: 500px) and (max-width: 750px) {
+    .grid {
+        -ms-grid-columns: 1fr 20px 1fr;
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* common properties of both media queries */
+@media all and (max-width: 750px) {
+    .grid {
+        grid-gap: 10px;
+    }
+
+    .grid__item:nth-child(1) {
+        grid-column: auto / auto;
+        grid-row: auto / auto;
+    }
+
+    .grid__item:nth-child(5) {
+        grid-column: auto / auto;
+        grid-row: auto / auto;
+    }
+
+    .grid__item:nth-child(8) {
+        grid-column: auto / auto;
+        grid-row: auto / auto;
+    }
+
+    h1 {
+        font-size: 22px;
+    }
+}
+
+
+/* Animations - about-page - svg */
+/* about page - keyframes - sun */
+@-webkit-keyframes color-change {
+    0% {
+        fill: #edc655;
+    }
+
+    50% {
+        fill: #fcffad;
+    }
+
+    100% {
+        fill: #f76414;
+    }
+}
+
+@keyframes color-change {
+    0% {
+        fill: #edc655;
+    }
+
+    50% {
+        fill: #fcffad;
+    }
+
+    100% {
+        fill: #f76414;
+    }
+}
+
+/* about page - keyframes - sun */
+.sun {
+    -webkit-animation: 4s color-change infinite alternate linear;
+    animation: 4s color-change infinite alternate linear;
+}
+
+
+
+/* about page - keyframes - cloud left */
+@-webkit-keyframes cloud-move {
+    from {
+        -webkit-transform: translate(0, 50px) scale3d(1, 1, 1);
+        transform: translate(0, 50px) scale3d(1, 1, 1);
+    }
+
+    to {
+        /* transform-origin: center center; */
+        -webkit-transform: translate(200px, 50px) scale3d(0.8, 0.8, 1);
+        transform: translate(200px, 50px) scale3d(0.8, 0.8, 1);
+    }
+}
+
+@keyframes cloud-move {
+    from {
+        -webkit-transform: translate(0, 50px) scale3d(1, 1, 1);
+        transform: translate(0, 50px) scale3d(1, 1, 1);
+    }
+
+    to {
+        /* transform-origin: center center; */
+        -webkit-transform: translate(200px, 50px) scale3d(0.8, 0.8, 1);
+        transform: translate(200px, 50px) scale3d(0.8, 0.8, 1);
+    }
+}
+
+/* about page - animation - cloud left*/
+.cloud-front {
+    -webkit-animation: 30s cloud-move infinite alternate linear;
+    animation: 30s cloud-move infinite alternate linear;
+}
+
+
+
+/* about page - keyframes - cloud right */
+@-webkit-keyframes cloud-move-reverse {
+    from {
+        -webkit-transform: translate(446px, 35px);
+        transform: translate(446px, 35px);
+    }
+
+    to {
+        -webkit-transform: translate(100px, 35px);
+        transform: translate(100px, 35px);
+    }
+}
+
+@keyframes cloud-move-reverse {
+    from {
+        -webkit-transform: translate(446px, 35px);
+        transform: translate(446px, 35px);
+    }
+
+    to {
+        -webkit-transform: translate(100px, 35px);
+        transform: translate(100px, 35px);
+    }
+}
+
+/* about page - animation - cloud right*/
+.cloud-back {
+    -webkit-animation: 35s cloud-move-reverse infinite alternate linear;
+    animation: 35s cloud-move-reverse infinite alternate linear;
+}
+
+
+
+/* page-header-icon */
+@media all and (max-width: 560px) {
+    .page-header-icon {
+        display: none;
+    }
+}
+
+
+/* main nav menu - resizing of menu items */
+@media (max-width: 560px) {
+
+    .page-header__item:last-child {
+        text-align: center;
+    }
+
+    .navigation-list li {
+        display: block;
+    }
+
+}
+
+
+
+/* contact form - resizing */
+@media (max-width: 560px) {
+
+    .contact-main-section__form-input {
+        /* display: flex; */
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        /* gap: 10px;
+        margin between input boxes. Use this instead of margin-bottom of label-tag
+        margin-bottom: 15px; */
+    }
+
+}

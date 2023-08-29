@@ -1,0 +1,673 @@
+/*
+
+Main colors used
+--text-color: #2b2b2b
+--primary-color: #8cabbf
+--secondary-color: #DF6615
+--background-color: #CDDDDD
+
+
+header: #8cabbf
+header color bar: #DF6615
+footer: #8cabbf
+
+
+main navigation - list items
+--main-nav-text-color: #FFF;
+--main-nav-normal-color: #456173
+--main-nav-hover-color: #244a64
+--main-nav-current-page-color: #BF5712
+--main-nav-active-color: #223c4f
+
+
+button colors
+--btn-text-color: #FFF
+--btn-background-color: #456173
+
+images
+--img-border-color: #456173
+
+box-shadow
+box-shadow: 5px 5px 15px #888;
+--box-shadow-color: #888
+
+
+link colors
+unvisited: #6D0075
+--link-unvisited-color: #6D0075
+
+visited: #2b2b2b
+--link-visited-color: #2b2b2b 
+
+active: #790202
+--link-active-color: #790202 
+
+*/
+
+
+
+
+/* root element of the document. Variables defined here have a global scope. */
+:root {
+
+    /* Colors */
+    /* Main colors used */
+    --text-color: #2b2b2b;
+    --primary-color: #8cabbf;
+    --secondary-color: #DF6615;
+    --background-color: #CDDDDD;
+
+    /* main navigation - list item colors */
+    --main-nav-text-color: #FFF;
+    --main-nav-normal-color: #456173;
+    --main-nav-hover-color: #244a64;
+    --main-nav-current-page-color: #BF5712;
+    --main-nav-active-color: #223c4f;
+
+    /* buttons - styling */
+    --btn-text-color: #FFF;
+    --btn-background-color: #456173;
+    --btn-border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+    --btn-font-weight: 700;
+
+    /* links - colors */
+    --link-unvisited-color: #6D0075;
+    --link-visited-color: #2b2b2b;
+    --link-active-color: #790202;
+
+
+    /* images */
+    /* images - colors */
+    --img-border: 7px solid #456173;
+    --img-border-radius: 15px;
+
+    /* images - box-shadow */
+    --img-box-shadow: 5px 5px 15px #888;
+
+
+    /* Text */
+    /* main font used */
+    --main-font-family: 'Roboto', Arial;
+    --main-font-size: 16px;
+    --main-line-height: 1.2;
+
+    /* h1 */
+    --h1-font-size: 34px;
+    --h1-line-height: 1.5;
+    --h1-font-weight: 900;
+    --h1-margin-bottom: 12px;
+
+
+    /* input-boxes -styling */
+    --input-box-border: 1px solid #aeaeae;
+    --input-box-border-radius: 5px;
+
+
+    /* Animations */
+    /* colors */
+    /* animation - about page - svg sun */
+    --anim-sun-fill-01: #edc655;
+    --anim-sun-fill-02: #fcffad;
+    --anim-sun-fill-03: #f76414;
+
+}
+
+
+
+
+/* sets the box-sizing property to border-box for all HTML elements, causing their width and height to include padding and border within the defined dimensions. */
+* {
+    box-sizing: border-box;
+}
+
+
+body {
+    background-color: var(--background-color);
+    font-family: var(--main-font-family);
+}
+
+/* The outer container takes the full height of the viewport */
+.page-container {
+    min-height: 100vh;
+    position: relative;
+}
+
+/* This prevents the content from flowing under the footer */
+.content-wrapper {
+    /* Must be equal to the height of the footer */
+    padding-bottom: 120px;
+}
+
+
+
+h1 {
+    color: var(--text-color);
+    font-size: var(--h1-font-size);
+    line-height: var(--h1-line-height);
+    font-weight: var(--h1-font-weight);
+    margin-bottom: var(--h1-margin-bottom);
+}
+
+.h1-heading-work {
+    text-align: center;
+}
+
+
+p {
+    color: var(--text-color);
+    font-size: var(--main-font-size);
+    line-height: var(--main-line-height);
+}
+
+
+
+a {
+    color: var(--link-unvisited-color);
+}
+
+a:visited {
+    /* visited link */
+    color: var(--link-visited-color);
+}
+
+a:hover,
+a:focus {
+    /* No underlining when hovering over a link */
+    text-decoration: none;
+}
+
+a:active {
+    /* selected link */
+    color: var(--link-active-color);
+}
+
+
+.about-main-section__btn--download,
+.contact-main-section__btn--submit {
+    /* overwrites browser defaults and resets the border */
+    border: none;
+    /* takes the font from the outer container */
+    font-family: inherit;
+    font-weight: var(--btn-font-weight);
+    /* styles the background color, font color, and text decoration (underline, etc.) of the button */
+    background-color: var(--btn-background-color);
+    color: var(--btn-text-color);
+    text-decoration: none;
+    /*adds spacing to the button (this will be discussed more in-depth later) */
+    padding: 10px;
+    border-radius: 3px;
+    /* gives the button a bottom border with a width of 2px, a type of solid, and a color in RGBA format */
+    border-bottom: var(--btn-border-bottom);
+
+    transition: opacity 0.7s;
+
+}
+
+
+.about-main-section__btn--download:hover,
+.about-main-section__btn--download:focus,
+.contact-main-section__btn--submit:hover,
+.contact-main-section__btn--submit:focus {
+    /* lets the mouse appear as a hand when hovering over the button */
+    cursor: pointer;
+    /* reduces the opacity of the button to 80% */
+    opacity: 0.8;
+}
+
+.contact-main-section {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.contact-main-section p {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 0 20px;
+    font-weight: 700;
+}
+
+.about-main-section {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.about-main-section .about-main-section__text p {
+    padding: 0 20px;
+}
+
+
+.about-main-section__table {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.about-main-section__btn--download {
+    display: inline-block;
+    margin: 40px 0 100px 0;
+    text-decoration: none;
+    min-width: 170px;
+}
+
+.contact-main-section__btn--submit {
+    display: inline-block;
+    margin: 15px 0 100px 0;
+    text-decoration: none;
+    min-width: 170px;
+}
+
+
+
+.contact-main-section__form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.contact-main-section__form-input {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    /* margin between input boxes. Use this instead of margin-bottom of label-tag */
+    margin-bottom: 15px;
+}
+
+
+label {
+    /* min-width important for uniform appearance */
+    min-width: 160px;
+    font-weight: 700;
+    text-align: left;
+    /* margin-bottom: 10px; */
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea {
+    /* using the full width of the container */
+    width: 100%;
+    padding: 10px;
+    border: var(--input-box-border);
+    border-radius: var(--input-box-border-radius);
+}
+
+
+
+
+
+
+
+
+
+/* Main Nav styling */
+.navigation-list__item--active {
+    /*  removes the underlining on the active element */
+    text-decoration: none;
+}
+
+.navigation-list__item {
+    font-weight: 700;
+    opacity: 1.0;
+}
+
+
+/* Centers profile "box" on the page */
+.profile {
+    max-width: 250px;
+    margin: 50px auto;
+    text-align: center;
+}
+
+
+.profile__portrait {
+    /* float: left; */
+    width: 250px;
+    /* margin-bottom: 30px; */
+    border: var(--img-border);
+    border-radius: var(--img-border-radius);
+     /* offset-x | offset-y | blur-radius | color */
+    box-shadow: var(--img-box-shadow);
+}
+
+.page-header {
+    display: flex;
+    width: 100%;
+    /* padding added to all sides of the header-container */
+    padding: 20px;
+    background-color: var(--primary-color);
+}
+
+.page-header-icon {
+    display: block;
+    width: 80px;
+    height: auto;
+    margin-left: 20px;
+    fill: var(--text-color);
+}
+
+.header-color-bar {
+    height: 13px;
+    width: 100%;
+    background-color: var(--secondary-color);
+}
+
+/* child items of the header have a base width of 200px and can shrink. No growing allowed */
+.page-header__item {
+    flex: 0 1 200px;
+    width: 200px;
+    /* responsive image */
+    max-width: 100%;
+    height: auto;
+}
+
+
+/* Pseudo-Selector :last-child to select the navigation. Navigation gets right-aligned. flex-grow property is overwritten but flex-basis and flex-shrink stay the same.*/
+.page-header__item:last-child {
+    flex-grow: 1;
+    text-align: right;
+}
+
+/* remove dots from unordered list */
+.navigation-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+/* aligns li elements of the navigation in a row */
+.navigation-list li {
+    display: inline-block;
+    /* margin-right: 0px; */
+    min-width: 90px;
+    line-height: 45px;
+    /* background-color: rgb(0, 0, 0); */
+    text-align: center;
+    /* using border-radius instead of percentage to avoid distortion when element is scaled up */
+    border-radius: 5px;
+    margin: 5px 3px;
+}
+
+/* selecting only the a-tags in the main nav menu to reset their states and colors */
+.navigation-list li a {
+    /* makes the whole li element a clickable Link */
+    display: block;
+    /* overwrites the a-tag properties for the nav menu */
+    text-decoration: none;
+    color: var(--main-nav-text-color);
+}
+
+/* overwrites the a-tag pseudo-classes for the nav menu */
+.navigation-list li a:hover,
+.navigation-list li a:active,
+.navigation-list li a:visited {
+    color: var(--main-nav-text-color);
+}
+
+
+
+
+/* styling the main navigation li elements */
+/* normal look of menu element */
+.navigation-list li.nav-list__li-element {
+    background-color: var(--main-nav-normal-color);
+    /* transition: opacity 0.7s; */
+}
+
+/* look of the current page that is opened */
+.navigation-list li.nav-list__li-element--active {
+    background-color: var(--main-nav-current-page-color);
+}
+
+
+/* hover, focus */
+.navigation-list li.nav-list__li-element:hover,
+.navigation-list li.nav-list__li-element:focus {
+    background-color: var(--main-nav-hover-color);
+    /* lets the mouse appear as a hand when hovering over the button */
+    cursor: pointer;
+    /* opacity: 0.8; */
+}
+
+/* active */
+.navigation-list li.nav-list__li-element:active {
+    background-color: var(--main-nav-active-color);
+}
+
+
+
+
+
+
+
+
+
+/* The footer will be positioned at the bottom inside the page-container */
+.page-footer {
+    /* clear: both; to clear the float */
+    clear: both;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    background-color: var(--primary-color);
+
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 120px;
+}
+
+
+
+
+
+/* grid layout */
+
+/* start grid fallback */
+.grid__item {
+    display: inline-block;
+    width: 33%;
+}
+
+/* end grid fallback */
+
+
+/* grid container */
+/* @supports ensures that browser supports the display: grid feature. Otherwise fallback solution */
+@supports (display: grid) {
+    .grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 20px;
+        padding: 50px;
+        margin: 0;
+    }
+
+
+    /* grid item */
+    .grid__item {
+        background-color: var(--primary-color);
+        width: auto;
+        min-height: auto;
+        justify-content: left;
+        text-align: left;
+        padding-left: 20px;
+        margin: 0;
+        /* border: 5px solid #4682b4; */
+    }
+
+    /* grid item - styling heading, text and a-tag */
+    .grid__item h1,
+    p {
+        margin-top: 10px;
+        margin-bottom: 5px;
+    }
+
+    .grid__item a {
+        display: block;
+        margin-top: 10px;
+        margin-bottom: 20px;
+    }
+
+    /* changing the grid layout - merge multiple grid cells */
+    .grid__item:nth-child(1) {
+        grid-column-start: 1;
+        grid-column-end: 1;
+        grid-row-start: 1;
+        grid-row-end: 3;
+    }
+
+    .grid__item:nth-child(5) {
+        /* using the short notation */
+        grid-column-start: 3 / 3;
+        grid-row-start: span 2;
+
+    }
+
+    .grid__item:nth-child(8) {
+        /* using the short notation */
+        grid-column-start: span 2;
+        grid-row-start: 4;
+    }
+}
+
+
+
+/* media queries*/
+@media all and (max-width: 500px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+@media all and (min-width: 500px) and (max-width: 750px) {
+    .grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* common properties of both media queries */
+@media all and (max-width: 750px) {
+    .grid {
+        grid-gap: 10px;
+    }
+
+    .grid__item:nth-child(1) {
+        grid-column: auto / auto;
+        grid-row: auto / auto;
+    }
+
+    .grid__item:nth-child(5) {
+        grid-column: auto / auto;
+        grid-row: auto / auto;
+    }
+
+    .grid__item:nth-child(8) {
+        grid-column: auto / auto;
+        grid-row: auto / auto;
+    }
+
+    h1 {
+        font-size: 22px;
+    }
+}
+
+
+/* Animations - about-page - svg */
+/* about page - keyframes - sun */
+@keyframes color-change {
+    0% {
+        fill: var(--anim-sun-fill-01);
+    }
+
+    50% {
+        fill: var(--anim-sun-fill-02);
+    }
+
+    100% {
+        fill: var(--anim-sun-fill-03);
+    }
+}
+
+/* about page - keyframes - sun */
+.sun {
+    animation: 4s color-change infinite alternate linear;
+}
+
+
+
+/* about page - keyframes - cloud left */
+@keyframes cloud-move {
+    from {
+        transform: translate(0, 50px) scale3d(1, 1, 1);
+    }
+
+    to {
+        /* transform-origin: center center; */
+        transform: translate(200px, 50px) scale3d(0.8, 0.8, 1);
+    }
+}
+
+/* about page - animation - cloud left*/
+.cloud-front {
+    animation: 30s cloud-move infinite alternate linear;
+}
+
+
+
+/* about page - keyframes - cloud right */
+@keyframes cloud-move-reverse {
+    from {
+        transform: translate(446px, 35px);
+    }
+
+    to {
+        transform: translate(100px, 35px);
+    }
+}
+
+/* about page - animation - cloud right*/
+.cloud-back {
+    animation: 35s cloud-move-reverse infinite alternate linear;
+}
+
+
+
+/* page-header-icon */
+@media all and (max-width: 560px) {
+    .page-header-icon {
+        display: none;
+    }
+}
+
+
+/* main nav menu - resizing of menu items */
+@media (max-width: 560px) {
+
+    .page-header__item:last-child {
+        text-align: center;
+    }
+
+    .navigation-list li {
+        display: block;
+    }
+
+}
+
+
+
+/* contact form - resizing */
+@media (max-width: 560px) {
+
+    .contact-main-section__form-input {
+        /* display: flex; */
+        flex-direction: column;
+        /* gap: 10px;
+        margin between input boxes. Use this instead of margin-bottom of label-tag
+        margin-bottom: 15px; */
+    }
+
+}

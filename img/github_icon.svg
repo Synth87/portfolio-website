@@ -1,0 +1,6 @@
+  <form action="/login-form-action" method="post">
+    <label for="email">Email:</label>
+    <input type="email" id="" name="user_email">
+    <textarea name="user_Meinung" id="email" cols="30" rows="10"></textarea>
+    <button type="submit">Register</button>
+  </form>
