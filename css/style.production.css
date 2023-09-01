@@ -55,7 +55,7 @@ active: #790202
 
 
 /* root element of the document. Variables defined here have a global scope. */
-:root {
+/* :root { */
 
     /* Colors */
     /* Main colors used */
@@ -86,8 +86,7 @@ active: #790202
     /* colors */
     /* animation - about page - svg sun */
 
-}
-
+/* } */
 
 
 
